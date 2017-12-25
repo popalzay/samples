@@ -1,0 +1,10 @@
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\bin\Debug\PublishToolResults.dll
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\bin\Debug\PublishToolResults.pdb
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\obj\Debug\MainDockpane.g.cs
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\obj\Debug\PublishToolResults_MarkupCompile.cache
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\obj\Debug\PublishToolResults_MarkupCompile.lref
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\obj\Debug\MainDockpane.baml
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\obj\Debug\PublishToolResults.g.resources
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\obj\Debug\PublishToolResults.csproj.CoreCompileInputs.cache
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\obj\Debug\PublishToolResults.dll
+C:\Users\geohu\Source\Repos\ArcGIS-Pro-SDK-Examples\PublishToolResults\obj\Debug\PublishToolResults.pdb

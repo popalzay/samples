@@ -1,0 +1,47 @@
+﻿<ArcGIS defaultAssembly="PublishToolResults.dll" defaultNamespace="PublishToolResults" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{b4d04a62-06a4-4d6a-afe0-ed136ee39112}" version="1.0" desktopVersion="2.0">
+    <Name>PublishToolResults</Name>
+    <Description>PublishToolResults description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>nxa7139a</Author>
+    <Company>Acme</Company>
+    <Date>12/8/2017 4:03:38 PM, 2017</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="PublishToolResults_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <!--<tab id="PublishToolResults_Tab1" caption="New Tab">
+          <group refID="PublishToolResults_Group1"/>
+        </tab>-->
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="PublishToolResults_Group1" caption="Group 1" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <button refID="PublishToolResults_MainDockpane_ShowButton" size="large" />
+          <!--Comment out the tool from add-in group area-->
+          <!--<tool refID="PublishToolResults_SelectMapTool" size="large" />-->
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <button id="PublishToolResults_MainDockpane_ShowButton" caption="Show MainDockpane" className="MainDockpane_ShowButton" loadOnClick="true" smallImage="Images\GenericButtonPurple16.png" largeImage="Images\GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+        <tool id="PublishToolResults_SelectMapTool" caption="SelectMapTool" className="SelectMapTool" loadOnClick="true" smallImage="Images\GenericButtonRed16.png" largeImage="Images\GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+      </controls>
+      <dockPanes>
+        <dockPane id="PublishToolResults_MainDockpane" caption="MainDockpane" className="MainDockpaneViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="MainDockpaneView" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>
