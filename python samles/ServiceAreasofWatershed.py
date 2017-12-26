@@ -69,7 +69,7 @@ mainForestImpervious = os.path.join(gdb,'mainForestImpervious')
 
 arcpy.AddWarning(identifier)
 
-def Intersecter(layerOne,layerTwo):
+def intersector(layerOne,layerTwo):
     arcpy.env.overwriteOutput = True
     outLayer = "temp_{0}".format(arcpy.Describe(layerTwo).name)
     arcpy.Intersect_analysis([layerOne,layerTwo],outLayer,"NO_FID","","INPUT")
@@ -111,17 +111,17 @@ def Joining(layer,joinfield,*layers):
 
 
 # clipping by main layer
-clippedServiceLayer = Intersecter(mainLayer,serviceAreaLayer) # clipped service area by main layer
-clippedOtherServiceLayer = Intersecter(mainLayer,otherServiceLayer) # clipped other service area by main layer
-clippedImperviousLayer = Intersecter(mainLayer,imperviousLayer) # clipped impervious layer by main layer
-clippedForestLayer = Intersecter(mainLayer,forestLayer) # clipped forest layer by main layer
+clippedServiceLayer = intersector(mainLayer,serviceAreaLayer) # clipped service area by main layer
+clippedOtherServiceLayer = intersector(mainLayer,otherServiceLayer) # clipped other service area by main layer
+clippedImperviousLayer = intersector(mainLayer,imperviousLayer) # clipped impervious layer by main layer
+clippedForestLayer = intersector(mainLayer,forestLayer) # clipped forest layer by main layer
 
 # Dissolve service layer
 serviceAreaDissolved = Dissolve_Add_Cal(clippedServiceLayer,identifier,"Regulated")
 arcpy.AddWarning(serviceAreaDissolved)
 
 # clipping by Service layers
-serviceAreaImpervious = Intersecter(serviceAreaDissolved,clippedImperviousLayer)
+serviceAreaImpervious = intersector(serviceAreaDissolved,clippedImperviousLayer)
 arcpy.AddWarning(serviceAreaImpervious)
 serviceAreaForest= Intersecter(serviceAreaDissolved,clippedForestLayer)
 arcpy.AddWarning(serviceAreaForest)
@@ -141,8 +141,8 @@ finalServiceLayer = Joining(serviceAreaDissolved,identifier,finalServiceImpervio
 # other service area dissolved
 otherServiceDissolved = Dissolve_Add_Cal(clippedOtherServiceLayer,identifier,"OtherRegu")
 # clipping by other Service dissolved layer
-otherServiceImpervious = Intersecter(otherServiceDissolved,clippedImperviousLayer)
-otherServiceForest = Intersecter(otherServiceDissolved,clippedForestLayer)
+otherServiceImpervious = intersector(otherServiceDissolved,clippedImperviousLayer)
+otherServiceForest = intersector(otherServiceDissolved,clippedForestLayer)
 # Merging forest and impervious layers
 otherServiceForestImpervious = Merger(otherServiceDissolved,otherServiceImpervious,otherServiceForest)
 # other service impervious, forest and pervious dissolved
